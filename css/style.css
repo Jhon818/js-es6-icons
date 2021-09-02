@@ -1,0 +1,58 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v14/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFWkU1Z4Y.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+
+header {
+    background-color: white;
+}
+
+header > span {
+    color: rgb(39, 54, 189);
+    font-weight: 400;
+    font-size: 1.8rem;
+    padding: 10px;
+}
+
+main {
+    background-color:rgba(15, 11, 11, 0.5);
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#icons {
+  display: flex;
+  background-color: whitesmoke;
+  width: 150px;
+  height: 80px;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 30px;
+}
+
+
+
+
+ 
+footer {
+    background-color: white;
+    height: 50px;
+}
