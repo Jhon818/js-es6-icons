@@ -135,7 +135,7 @@ iconsFunction =  () => {
   
 }
 
-iconsFunction(element,icons,iconsContainer);
+iconsFunction();
 
 
 // Milestone 2
@@ -146,9 +146,11 @@ var green =" #003300";
 iconsType = (colors,iconsFunction) => {
     colors = [red,purple,green];
    const {name,family,prefix} = iconsFunction;
+   iconsFunction.filter
    console.log(`${iconsFunction.name}`); 
     
 }
+iconsType();
   //  sezione arrow functions
 
   
