@@ -109,24 +109,52 @@ const icons = [
 
 //  sezione arrow functions
 //   Milestone 1
+var red = "#ff0000";
+var purple = "#660066";
+var green =" #003300";
+let colors = [red,purple,green];
+
+
+
+colorsIcons = (iconsFunction) => {
+ 
+  if (element.type === "animal") {
+    return colors[1];
+}
+
+else if (element.family === "fas") {
+    return colors[2];
+}
+else {
+  return colors[3];
+}
+
+};
+
+console.log(colorsIcons)
+
+
+
+
+
 iconsFunction =  () => {
     iconsContainer.innerHTML = "";
   icons.forEach((element) => {
       
-    const {name,family,prefix} = element;
+    const {name,family,prefix,colors} = element;
 
     console.log(`${element.name}`); 
 
     iconsContainer.innerHTML += `
     
-    <div class "container">
-       <div id="icons">
+    
+       <div class="card">
                
-                <i class="${family} ${prefix + name}"></i>
+                <i class="${family} ${prefix + name}" style:${colors}></i>
                 <span>${name.toLocaleUpperCase()}</span>
                
             </div>
-    </div>
+    
 
   `;
   });
@@ -140,17 +168,38 @@ iconsFunction();
 
 // Milestone 2
 
-var red = "#ff0000";
-var purple = "#660066";
-var green =" #003300";
-iconsType = (colors,iconsFunction) => {
-    colors = [red,purple,green];
+
+
+
+iconsType = () => {
+   
    const {name,family,prefix} = iconsFunction;
-   iconsFunction.filter
-   console.log(`${iconsFunction.name}`); 
-    
+
+   icons.forEach((element) => {
+     console.log(element.type)
+
+     if (!colors.includes(element.type)) {
+       colors.push(element.type);
+     }
+     return element.type;
+   });
+
 }
-iconsType();
+
+iconsType(`${iconsFunction()}`);
+
+function printOptions(array,select) {
+array.forEach((element) => {
+  console.log(element)
+select.innerHTML += `
+            <option value="All"></option>
+            <option value="animals"></option>
+            <option value="users"></option>
+`
+}) ;
+};
+
+
   //  sezione arrow functions
 
   
