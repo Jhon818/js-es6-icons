@@ -109,48 +109,46 @@ const icons = [
 
 //  sezione arrow functions
 //   Milestone 1
+
 var red = "#ff0000";
 var purple = "#660066";
 var green =" #003300";
 let colors = [red,purple,green];
 
+ArrayColors = {icons};
+console.log(ArrayColors)
 
+function getColorsByType (type) {
+  if (type === "animal") {
+    return red
+  }
 
-colorsIcons = (iconsFunction) => {
- 
-  if (element.type === "animal") {
-    return colors[1];
+  if (type === "vegetable") {
+    return purple
+  }
+
+   if (type === "user") {
+    return green
+  }
 }
-
-else if (element.family === "fas") {
-    return colors[2];
-}
-else {
-  return colors[3];
-}
-
-};
-
-console.log(colorsIcons)
-
-
-
-
 
 iconsFunction =  () => {
+  
+
     iconsContainer.innerHTML = "";
   icons.forEach((element) => {
       
-    const {name,family,prefix,colors} = element;
-
-    console.log(`${element.name}`); 
+    const {name,family,prefix,type} = element;
+ 
+  
+    // console.log(`${element.name}`); 
 
     iconsContainer.innerHTML += `
     
     
        <div class="card">
                
-                <i class="${family} ${prefix + name}" style:${colors}></i>
+                <i id="icons" class="${family} ${prefix + name}" style="color:${getColorsByType(type)};";></i>
                 <span>${name.toLocaleUpperCase()}</span>
                
             </div>
@@ -168,15 +166,10 @@ iconsFunction();
 
 // Milestone 2
 
-
-
-
 iconsType = () => {
-   
-   const {name,family,prefix} = iconsFunction;
 
    icons.forEach((element) => {
-     console.log(element.type)
+    //  console.log(element.type)
 
      if (!colors.includes(element.type)) {
        colors.push(element.type);
@@ -185,20 +178,43 @@ iconsType = () => {
    });
 
 }
+iconsType();
 
-iconsType(`${iconsFunction()}`);
+
 
 function printOptions(array,select) {
-array.forEach((element) => {
+
+array = icons.map((element) => {
+  
   console.log(element)
-select.innerHTML += `
-            <option value="All"></option>
-            <option value="animals"></option>
-            <option value="users"></option>
+  
+select = document.querySelector("option");
+
+ element = {name,type}
+
+  select.innerHTML += `
+  <option value="${element.type}">${element.type}</option>
 `
+
+
+  switch (iconsType()) {
+    case "animal":
+      return element.type
+
+      case "vegetable":
+      return element.type
+
+      case "user":
+        return element.type
+    default:
+      break;
+  }
+
 }) ;
 };
-
+printOptions()
+// Milestone 3
+// Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 
   //  sezione arrow functions
 
