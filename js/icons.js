@@ -180,39 +180,19 @@ iconsType = () => {
 }
 iconsType();
 
+// select.onchange(document.getElementsByTagName("option"));
 
-
-function printOptions(array,select) {
-
-array = icons.map((element) => {
-  
-  console.log(element)
-  
-select = document.querySelector("option");
-
- element = {name,type}
-
-  select.innerHTML += `
-  <option value="${element.type}">${element.type}</option>
-`
-
-
-  switch (iconsType()) {
-    case "animal":
-      return element.type
-
-      case "vegetable":
-      return element.type
-
-      case "user":
-        return element.type
-    default:
-      break;
+function printOptions() {
+    let select = document.getElementById('option');
+    icons.forEach((element) => {
+      console.log(element);
+      select.innerHTML += `
+        <option value="${element.type}">${element.type}</option>
+      `;
+    });
   }
 
-}) ;
-};
-printOptions()
+
 // Milestone 3
 // Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 
