@@ -183,7 +183,7 @@ iconsType();
 // select.onchange(document.getElementsByTagName("option"));
 
 function printOptions() {
-    let select = document.getElementById('option');
+    let select = document.getElementById('type');
     icons.forEach((element) => {
       console.log(element);
       select.innerHTML += `
@@ -191,6 +191,8 @@ function printOptions() {
       `;
     });
   }
+
+  printOptions()
 
 
 // Milestone 3
